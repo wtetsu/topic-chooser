@@ -1,0 +1,19 @@
+#root {
+    text-align: center;
+    position: absolute;
+    top: -250px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 1000px;
+    height: 300px;
+}
+
+.selected-topic {
+    color: red;
+    display: inline-block;
+    color: #111;
+    transition: 0.5s;
+    transform: scale(3.5, 3.5);
+}
