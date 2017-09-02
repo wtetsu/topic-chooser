@@ -17,3 +17,21 @@
     transition: 0.5s;
     transform: scale(3.5, 3.5);
 }
+
+.button-large {
+    font-size: 1.4rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    padding: 0 2rem;
+}
+
+@keyframes swinging{
+    0%{transform: rotate(6deg);}
+    50%{transform: rotate(-3deg)}
+    100%{transform: rotate(6deg);}
+}
+ 
+.swingimage {
+    transform-origin: 50% 0;
+    animation: swinging 4.0s ease-in-out forwards infinite;
+}
