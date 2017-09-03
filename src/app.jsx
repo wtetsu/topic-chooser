@@ -34,7 +34,7 @@ class TopicChooser extends React.Component {
         );
     }
     buttonPushed(e) {
-        this.state.buttonClassName = "button-large";
+        this.state.buttonClassName = 'button-large';
         let selectedTopic = null;
         let id = setInterval(()=>{
             let index = utils.getRandomValue(0, this.state.list.length-1);
@@ -49,10 +49,6 @@ class TopicChooser extends React.Component {
             this.setState(this.state);
         }, 1500)
     }
-    changeText(e) {
-        this.state.inputText = e.target.value;
-        this.setState(this.state);
-    }
 }
 
 class App extends React.Component {
@@ -66,5 +62,5 @@ class App extends React.Component {
 
 ReactDOM.render(
   <App />,
-  document.getElementById("root")
+  document.getElementById('root')
 );
