@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
@@ -32,6 +33,11 @@ module.exports = {
             output: {
               comments: false
             }
+        }),
+        new webpack.DefinePlugin({
+          'process.env':{
+            'NODE_ENV': JSON.stringify('production')
+          }
         })
     ],
     devServer: {
