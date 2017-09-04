@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
     context: path.join(__dirname, 'src'),
-    entry: './app.jsx',
+    entry: './app.js',
     output: {
         path: path.join(__dirname, 'public'),
         filename: './app.js'

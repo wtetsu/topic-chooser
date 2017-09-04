@@ -1,4 +1,4 @@
-require('es6-promise').polyfill();
+import 'es6-promise/auto';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
@@ -8,8 +8,7 @@ class TopicChooser extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: [
-            ],
+            list: [],
             selectedTopic: {},
             buttonClassName: 'button-large swingimage'
         };
@@ -22,11 +21,10 @@ class TopicChooser extends React.Component {
         });
     }
     render() {
-        var list = this.state.list.map(a => <li key={a.link}>{a.title}</li>);
         return (
             <div>
                 <h1>Topic Chooser</h1>
-                <img src="logo.png" width="256" height="256" />
+                <img src="logo.png" width="128" height="128" />
                 <p>Choose one topic randomly from <a target="_blank" href="http://iteslj.org/questions/">http://iteslj.org/questions/</a></p>
                 <p><button className={this.state.buttonClassName} onClick={this.buttonPushed.bind(this)}>PUSH TO SELECT!</button></p>
                 <p className={this.state.selectedTopic.className}><a target="_blank" href={'http://iteslj.org/questions/' + this.state.selectedTopic.link}>{this.state.selectedTopic.title}</a></p>
@@ -51,16 +49,4 @@ class TopicChooser extends React.Component {
     }
 }
 
-class App extends React.Component {
-    render() {
-        return (
-            <TopicChooser>
-            </TopicChooser>
-        )
-    }
-}
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+export default TopicChooser;
