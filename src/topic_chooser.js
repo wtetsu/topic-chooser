@@ -1,6 +1,5 @@
 import 'es6-promise/auto';
 import React from 'react';
-import ReactDOM from 'react-dom';
 import axios from 'axios';
 import utils from './utils';
 
@@ -30,7 +29,7 @@ class TopicChooser extends React.Component {
             </div>
         );
     }
-    buttonPushed(e) {
+    buttonPushed() {
         this.setState({buttonClassName: 'button-large'});
         let selectedTopic = null;
         let intervalId = setInterval(()=>{
@@ -43,7 +42,7 @@ class TopicChooser extends React.Component {
             clearInterval(intervalId);
             selectedTopic.className = 'selected-topic';
             this.setState({selectedTopic});
-        }, 1500)
+        }, 1500);
     }
 }
 
