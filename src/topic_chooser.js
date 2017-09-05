@@ -8,14 +8,13 @@ class TopicChooser extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: [],
             selectedTopic: {},
             buttonClassName: 'button-large swingimage'
         };
+        this.topics = [];
 
         axios.get('./data.json').then((response) => {
-            this.state.list = response.data;
-            this.setState(this.state);
+            this.topics = response.data;
         }).catch((error) => {
             console.log(error);
         });
@@ -32,19 +31,18 @@ class TopicChooser extends React.Component {
         );
     }
     buttonPushed(e) {
-        this.state.buttonClassName = 'button-large';
+        this.setState({buttonClassName: 'button-large'});
         let selectedTopic = null;
-        let id = setInterval(()=>{
-            let index = utils.getRandomValue(0, this.state.list.length-1);
-            selectedTopic = this.state.list[index];
+        let intervalId = setInterval(()=>{
+            let index = utils.getRandomValue(0, this.topics.length-1);
+            selectedTopic = this.topics[index];
             selectedTopic.className = null;
-            this.state.selectedTopic = selectedTopic;
-            this.setState(this.state);
+            this.setState({selectedTopic});
         }, 10);
         setTimeout(()=>{
-            clearInterval(id);
+            clearInterval(intervalId);
             selectedTopic.className = 'selected-topic';
-            this.setState(this.state);
+            this.setState({selectedTopic});
         }, 1500)
     }
 }
