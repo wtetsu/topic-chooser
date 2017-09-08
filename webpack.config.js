@@ -29,16 +29,16 @@ module.exports = {
             minimize: true,
             sourceMap: false,
             compressor: {
-               warnings: false
+                warnings: false
             },
             output: {
-              comments: false
+                comments: false
             }
         }),
         new webpack.DefinePlugin({
-          'process.env':{
-            'NODE_ENV': JSON.stringify('production')
-          }
+            'process.env':{
+                'NODE_ENV': JSON.stringify('production')
+            }
         })
     ],
     devServer: {
