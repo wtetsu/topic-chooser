@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
     context: path.join(__dirname, 'src'),
-    entry: './app.js',
+    entry: './app.jsx',
     output: {
         path: path.join(__dirname, 'public'),
         filename: './app.js'
@@ -18,6 +18,9 @@ module.exports = {
             loader: 'babel-loader'
         }
       ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
     devtool: 'source-map',
     plugins: [
