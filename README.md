@@ -1,5 +1,6 @@
 # Topic Chooser
-This is a tool to choose one conversation topic from http://iteslj.org/questions/, which is assumed to be used for English speaking lessons.
+
+This is a tool you can choose a conversation topic: http://iteslj.org/questions/
 
 ![ss01](https://github.com/wtetsu/topic-chooser/blob/images/ss01.png)
 
