@@ -4,9 +4,7 @@ import readline from 'readline';
 
 const TMP_HTML_FILE = 'html.tmp';
 
-//const url = 'http://iteslj.org/questions/';
-const url = 'http://localhost/a.html';
-
+const url = 'http://iteslj.org/questions/';
 let exclusions = {
     'z.html': true
 };
