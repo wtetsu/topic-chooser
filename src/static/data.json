@@ -108,6 +108,14 @@
 {"link":"health.html","title":"Health"},
 {"link":"healthylifestyle.html","title":"Healthy Lifestyle"},
 {"link":"hobby.html","title":"Hobbies"},
+{"link":"holiday.html","title":"Holidays"},
+{"link":"aprilfools.html","title":"April Fool's Day"},
+{"link":"christmas.html","title":"Christmas"},
+{"link":"halloween.html","title":"Halloween"},
+{"link":"st_patrick.html","title":"Saint Patrick's Day"},
+{"link":"thanksgiving.html","title":"Thanksgiving"},
+{"link":"vacation.html","title":"After a Vacation"},
+{"link":"valentine.html","title":"Valentine's Day"},
 {"link":"home.html","title":"Home"},
 {"link":"homeless.html","title":"Homeless"},
 {"link":"hometowns.html","title":"Hometowns"},
@@ -240,6 +248,8 @@
 {"link":"worldpeace.html","title":"World Peace"},
 {"link":"wouldyou.html","title":"Would you ever...?"},
 {"link":"wouldyourather.html","title":"Would you rather...?"},
+{"link":"areyougood.html","title":"Are You Good At ...?"},
 {"link":"days.html","title":"Days of the Week"},
+{"link":"how.html","title":"How do you...?"},
 {"link":"months.html","title":"Months of the Year"}
 ]

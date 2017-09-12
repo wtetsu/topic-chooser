@@ -7,6 +7,10 @@ const TMP_HTML_FILE = 'html.tmp';
 //const url = 'http://iteslj.org/questions/';
 const url = 'http://localhost/a.html';
 
+let exclusions = {
+    'z.html': true
+};
+
 async function downloadAndSaveHtml() {
     return new Promise((resolve)=>{
         let file = fs.createWriteStream(TMP_HTML_FILE);
@@ -32,8 +36,10 @@ async function parseHtmlFile() {
                     break;
                 }
                 let link = m[1];
-                let title = m[2].replace(/&amp;/g, '&');
-                data.push({link, title});
+                if (!exclusions[link]) {
+                    let title = m[2].replace(/&amp;/g, '&').replace(/"/g, '\\"');
+                    data.push({link, title});
+                }
             }        
         });
         lineReader.on('close', ()=>{
@@ -53,7 +59,7 @@ async function main() {
     await downloadAndSaveHtml();
     let data = await parseHtmlFile();
     let json = createDataJson(data);
-    let stream = fs.createWriteStream('public/data.json');
+    let stream = fs.createWriteStream('src/static/data.json');
     stream.write(json);
     stream.end();
     fs.unlinkSync(TMP_HTML_FILE);
