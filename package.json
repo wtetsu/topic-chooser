@@ -7,7 +7,8 @@
     "start": "webpack-dev-server",
     "build": "webpack --progress",
     "watch": "webpack --watch",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "create-data": "node src/create_data_json.js"
   },
   "dependencies": {
     "axios": "^0.16.2",
