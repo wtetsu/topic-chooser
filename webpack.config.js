@@ -3,6 +3,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 
+const BASE_PLUGINS = [
+    new CopyWebpackPlugin([
+        { from: 'static', to: '.' },
+        { from: __dirname + '/node_modules/milligram/dist/milligram.min.css', to: '.' }
+    ]),
+];
+
 module.exports = {
     context: path.join(__dirname, 'src'),
     entry: './app.jsx',
@@ -22,12 +29,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.jsx']
     },
-    devtool: 'source-map',
-    plugins: [
-        new CopyWebpackPlugin([
-            { from: 'static', to: '.' },
-            { from: __dirname + '/node_modules/milligram/dist/milligram.min.css', to: '.' }
-        ]),
+    plugins: (process.env.NODE_ENV === 'production')
+    ? BASE_PLUGINS.concat([
         new UglifyJsPlugin({
             minimize: true,
             sourceMap: false,
@@ -43,8 +46,12 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('production')
             }
         })
-    ],
+    ])
+    : BASE_PLUGINS,
     devServer: {
         contentBase: 'public'
-    }
+    },
+    devtool: (process.env.NODE_ENV === 'production')
+    ? 'source-map'
+    : ''
 };

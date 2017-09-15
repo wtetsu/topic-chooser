@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server",
-    "build": "webpack --progress",
+    "build": "webpack --progress -p",
     "watch": "webpack --watch",
     "lint": "eslint src",
     "create-data": "babel-node src/create_data_json.js"
